@@ -79,6 +79,26 @@
 		\subsection*{Links}
 			How to stop windows 10 from rebooting automatically \href{https://www.windowscentral.com/how-prevent-windows-10-rebooting-after-installing-updates}{https://www.windowscentral.com/how-prevent-windows-10-rebooting-after-installing-updates}
 
+	\section{Linux}
+		\subsection*{Git}
+			Download current version \href{https://mirrors.edge.kernel.org/pub/software/scm/git/}{https://mirrors.edge.kernel.org/pub/software/scm/git/}
+			If you need to install a local version that is more up-to-date than what is available system wide:
+			\begin{enumerate}
+				\item Uncompress the git package
+				\item Within the new git dir, run \texttt{make} then \texttt{make install}
+				\item Put \texttt{\~/bin} on your path within \texttt{.bashrc}
+			\end{enumerate}
+			Download current version of gitlfs \href{https://git-lfs.github.com/}{https://git-lfs.github.com/}
+			\begin{enumerate}
+				\item Uncompress the git-lfs package
+				\item Within the new git-lfs dir, edit the \texttt{install.sh} file so that \texttt{prefix} is pointing to somewhere in your user directory.
+				\item Run the install script
+				\item Place a link within the your user bin directory, \eg{\texttt{ln -s /home/user/git-lfs/local/bin/git-lfs /home/user/bin/git-lfs}}
+				\item Put \texttt{\~/bin} on your path within \texttt{.bashrc}, if not already
+			\end{enumerate}
+			Download a gui like gitkraken \href{https://www.gitkraken.com/download}{https://www.gitkraken.com/download}
+			Place a link within your user bin directory, \eg{\texttt{ln -s /home/user/gitkraken/gitkraken /home/user/bin/gitkraken}}
+			\textbf{\color{red} If installed in your local user space, you will be responsible to update packages!}
 	\newpage
 	\bibliography{ref.bib}
 \end{document}
