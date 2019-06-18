@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[11pt,spacing=single]{article}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages
@@ -99,6 +99,33 @@
 			Download a gui like gitkraken \href{https://www.gitkraken.com/download}{https://www.gitkraken.com/download}
 			Place a link within your user bin directory, \eg{\texttt{ln -s /home/user/gitkraken/gitkraken /home/user/bin/gitkraken}}
 			\textbf{\color{red} If installed in your local user space, you will be responsible to update packages!}
+
+	\section{Git}
+		\subsection*{Scripts for Custom Actions}
+			\subsubsection*{Windows}
+				Gitlfs fetch all, make \texttt{gitlfsFetchAll.bat} with:\\
+				\texttt{FOR /F "delims==" \%\%a IN ('git remote') DO (git lfs fetch --all \%\%a)}\\
+
+				\noindent
+				Gitlfs push all, make \texttt{gitlfsPushAll.bat} with:\\
+				\texttt{FOR /F "delims==" \%\%a IN ('git remote') DO (git lfs push --all \%\%a)}\\
+
+				\noindent
+				Git push all, make \texttt{gitPushAll.bat} with:\\
+				\texttt{FOR /F "delims==" \%\%a IN ('git remote') DO (git push \%\%a --all)}
+
+			\subsubsection*{Linux/Mac}
+				Gitlfs fetch all, make \texttt{gitlfsFetchAll.sh} with:\\
+				\texttt{\#!/bin/bash\\ git remote \textbar xargs -n1 git lfs fetch --all}\\
+
+				\noindent
+				Gitlfs push all, make \texttt{gitlfsPushAll.sh} with:\\
+				\texttt{\#!/bin/bash\\ git remote \textbar xargs -n1 git lfs push --all}\\
+
+				\noindent
+				Git push all, make \texttt{gitPushAll.sh} with:\\
+				\texttt{\#!/bin/bash\\ git remote \textbar xargs -n1 git push --all}
+
 	\newpage
 	\bibliography{ref.bib}
 \end{document}
