@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+\usepackage{titlepic}
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{sansmathfonts}
+\usepackage{listings}
+\usepackage[shortlabels]{enumitem}
+\usepackage{hyperref}
+\usepackage{nameref}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{cite}
+\usepackage[english]{babel} % English blindtext
+\usepackage{blindtext} % macros for producing dummy output
+\bibliographystyle{ieeetr}
+\usepackage{fancyvrb} % nicer verbatim handling
+\usepackage{sansmathfonts}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[colorinlistoftodos,textwidth=20mm,shadow]{todonotes}
+% \usepackage[disable]{todonotes}
+% \usepackage{draftwatermark}
+% \SetWatermarkText{\parbox{\textwidth}{\centering DRAFT v0.1}}
+% \SetWatermarkScale{1.0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Local defines
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\sgn}{sgn}
+\newcommand{\ith}{\ensuremath{i^\text{th}} }
+\newcommand{\jth}{\ensuremath{j^\text{th}} }
+\newcommand{\nth}{\ensuremath{n^\text{th}} }
+\newcommand{\blditm}[1]{\item{\textbf{#1}}}
+
+% Use \qst command for questions that need answering
+\newcommand{\qst}[1]{\todo[color=magenta]{#1}}
+% Use \lookup for items that need further research
+\newcommand{\lookup}[1]{\todo[color=green]{#1}}
+% Use \tsk for tasks that still need to be completed
+\newcommand{\tsk}[1]{\todo[inline,color=cyan]{#1}}
+% Use \idea for ideas not ready to be in text
+\newcommand{\idea}[1]{\todo[inline,color=yellow]{#1}}
+% Use \err to highlight were there are serious problems
+\newcommand{\err}[1]{\todo[inline,color=red]{#1}}
+% use to put a note in the margin
+\newcommand{\sidenote}[2]{\todo[color=#1,size=\tiny]{#2}}
+
+\newcommand{\etal}{\textit{et al. }}
+\newcommand{\ie}[1]{\textit{i.e.} {#1}}
+\newcommand{\eg}[1]{\textit{e.g.} {#1}}
+
+% Use ``\cite{NEEDED}'' to get Wikipedia-style ``citation needed'' in document
+\usepackage{ifthen}
+\let\oldcite=\cite
+\renewcommand\cite[1]{\ifthenelse{\equal{#1}{NEEDED}}{\textsuperscript{\texttt{\color{red}[citation~needed]}}\todo{citation needed}}{\oldcite{#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{Eric Wait}
+\title{General Notes}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\newpage
+
+	\listoftodos
+	\newpage
+
+	\section{Windows}
+		\subsection*{Links}
+			How to stop windows 10 from rebooting automatically \href{https://www.windowscentral.com/how-prevent-windows-10-rebooting-after-installing-updates}{https://www.windowscentral.com/how-prevent-windows-10-rebooting-after-installing-updates}
+
+	\newpage
+	\bibliography{ref.bib}
+\end{document}
